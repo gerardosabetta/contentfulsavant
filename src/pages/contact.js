@@ -156,15 +156,14 @@ export default function Contact(props) {
             Whoops... Something went wrong.
           </span>
 
-          <p
+          <input type="hidden" name="form-name" value="contact" />
+          <div
             style={{
               display: "none",
             }}
           >
-            <label>
-              <input name="bot-field" />
-            </label>
-          </p>
+            <input name="bot-field" />
+          </div>
         </form>
       </Container>
     </Layout>
