@@ -16,45 +16,23 @@ import {
 
 // this one is all hardcoded
 export default function Contact(props) {
-  React.useEffect(() => {
-    const form = document.querySelector("form")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const data = new FormData(form)
 
-    function submitHandler(e) {
-      e.preventDefault()
-      // form data sent to Netlify server
-      const formData = new FormData(form)
-
-      // user-facing message containers (hidden initially)
-      const errorDisplay = document.querySelector("#error")
-      const successDisplay = document.querySelector("#success")
-
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then(() => {
+        document.getElementById("success").style.display = "block"
       })
-        .then(handleErrors)
-        .then(() => {
-          // displays success message to user
-          successDisplay.style.display = "block"
-        })
-        .catch((error) => {
-          // displays error message to user
-          errorDisplay.style.display = "block"
-          console.log(error)
-        })
-    }
-    // Error Handler
-    function handleErrors(response) {
-      // throws an error if HTTP response failed
-      if (!response.ok) {
-        throw Error(response.statusText)
-      }
-      return response
-    }
-    // only adds an event listener if there is a form present on the page
-    if (form) form.addEventListener("submit", submitHandler)
-  }, [])
+      .catch(() => {
+        document.getElementById("error").style.display = "block"
+      })
+  }
 
   return (
     <Layout>
@@ -70,9 +48,11 @@ export default function Contact(props) {
 
         <form
           name="contact"
+          method="POST"
           autoComplete="off"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
         >
           <div
             style={{
@@ -182,7 +162,7 @@ export default function Contact(props) {
             }}
           >
             <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
+              <input name="bot-field" />
             </label>
           </p>
         </form>
