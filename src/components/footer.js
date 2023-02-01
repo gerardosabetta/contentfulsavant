@@ -110,6 +110,10 @@ export default function Footer() {
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
             <BrandLogo />
+            <br />
+            <p>
+              530-B HARKLE ROAD STE 100, SANTA FE, NEW MEXICO CP 87505
+            </p>
           </NavLink>
           <Space />
           <FlexList>
