@@ -117,12 +117,30 @@ export default function Footer() {
     >
       <Container>
         <Flex variant="start" responsive>
-          <NavLink to="/">
-            <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <NavLink to="/">
+              <VisuallyHidden>Home</VisuallyHidden>
+              <BrandLogo />
+            </NavLink>
             <br />
             <p>530-B HARKLE ROAD STE 100, SANTA FE, NEW MEXICO CP 87505</p>
-          </NavLink>
+            <p>
+              <a
+                href="mailto:savantdevelopers@gmail.com"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
+                savantdevelopers@gmail.com
+              </a>
+            </p>
+          </div>
           <Space />
           <FlexList>
             {socialLinks &&
