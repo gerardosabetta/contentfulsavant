@@ -140,6 +140,15 @@ export default function Footer() {
                 savantdevelopers@gmail.com
               </a>
             </p>
+            <p>
+              Give us a call:{" "}
+              <a
+                href="tel: +1 (505) 666-4738"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                +1 (505) 666-4738
+              </a>
+            </p>
           </div>
           <Space />
           <FlexList>
