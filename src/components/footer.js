@@ -104,16 +104,24 @@ export default function Footer() {
   const { links, meta, socialLinks, copyright } = data.layout.footer
 
   return (
-    <Box as="footer" paddingY={4}>
+    <Box
+      as="footer"
+      style={{
+        backgroundColor: "#03071e",
+        position: "sticky",
+        bottom: 0,
+        width: "100%",
+        zIndex: 1000,
+      }}
+      paddingY={4}
+    >
       <Container>
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
             <BrandLogo />
             <br />
-            <p>
-              530-B HARKLE ROAD STE 100, SANTA FE, NEW MEXICO CP 87505
-            </p>
+            <p>530-B HARKLE ROAD STE 100, SANTA FE, NEW MEXICO CP 87505</p>
           </NavLink>
           <Space />
           <FlexList>

@@ -11,6 +11,7 @@ import {
   Kicker,
   Space,
 } from "./ui"
+import { Linkedin, Twitter } from "react-feather"
 
 function AboutProfile(props) {
   return (
@@ -33,6 +34,24 @@ function AboutProfile(props) {
             {props.jobTitle}
           </Text>
         )}
+        <Text variant="small" center>
+          Gerardo is the main person behind this team. He is a fullstack
+          developer with a passion for building great products.
+        </Text>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 16,
+          }}
+        >
+          <a href="https://www.linkedin.com/in/gerardosabetta/">
+            <Linkedin />
+          </a>
+          <a href="https://twitter.com/GerardoSabetta">
+            <Twitter />
+          </a>
+        </Box>
       </Box>
     </Box>
   )
