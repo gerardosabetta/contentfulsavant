@@ -131,13 +131,13 @@ export default function Footer() {
             <p>530-B HARKLE ROAD STE 100, SANTA FE, NEW MEXICO CP 87505</p>
             <p>
               <a
-                href="mailto:savantdevelopers@gmail.com"
+                href="mailto:contact@savantdevelopment.com"
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
               >
-                savantdevelopers@gmail.com
+                contact@savantdevelopment.com
               </a>
             </p>
             <p>
